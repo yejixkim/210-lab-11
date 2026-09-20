@@ -46,22 +46,41 @@ int main () {
     }
 
     // display all info
-    cout << "Lab Processing Report\n"
+    cout << "Lab Processing Report\n";
 
     for (int i = 0; i < numberOfWorkers; i++) {
         cout << "\nEmployee ID: " << workers[i].employeeID << endl;
 
         cout << "Samples Processed: ";
 
-        for (int j = 0; j < workers[i.]numberOfDays; j++) {
+        for (int j = 0; j < workers[i].numberOfDays; j++) {
             cout << workers[i].samplesProcessed[j] << " ";
         }
 
         cout << endl;
 
-        
+        // calc total samples for this worker
+        int totalSamples = 0;
 
+        for (int j = 0; j < workers[i].numberOfDays; j++) {
+            totalSamples += workers[i].samplesProcessed[j];
+        }
+
+        // calc the average
+        double average = static_cast<double>(totalSamples) / workers[i].numberOfDays;
+
+        cout << "Average samples per day: " << average << endl;
     }
+
+    // delete each worker's internal dynamic array
+    for (int i = 0; i < numberOfWorkers; i++) {
+        delete[] workers[i].samplesProcessed;
+    }
+
+    // delete the outer dynamic array of structs
+    delete[] workers;
+
+    cout << "\nProgram complete.\n";
 
     return 0;
 }
