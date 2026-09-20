@@ -37,6 +37,12 @@ int main () {
         // create a dynamic array inside the struct
         workers[i].samplesProcessed = new int[workers[i].numberOfDays];
 
+        // get the number of samples processed for each day
+        for (int j = 0; j < workers[i].numberOfDays; j++) {
+            cout << "Samples processed on day " << j + 1 << ": ";
+            cin >> workers[i].samplesProcessed[j];
+        }
+
     }
 
     return 0;
