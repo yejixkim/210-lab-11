@@ -45,5 +45,23 @@ int main () {
 
     }
 
+    // display all info
+    cout << "Lab Processing Report\n"
+
+    for (int i = 0; i < numberOfWorkers; i++) {
+        cout << "\nEmployee ID: " << workers[i].employeeID << endl;
+
+        cout << "Samples Processed: ";
+
+        for (int j = 0; j < workers[i.]numberOfDays; j++) {
+            cout << workers[i].samplesProcessed[j] << " ";
+        }
+
+        cout << endl;
+
+        
+
+    }
+
     return 0;
 }
